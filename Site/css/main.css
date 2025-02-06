@@ -1,0 +1,50 @@
+@font-face {
+    font-family: nameFont;
+    src: url(../fonts/BRLNSR.TTF) format("truetype");
+}
+
+body, html {
+    font-family: nameFont, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaf1e8;
+    color: #eaf1e8;
+    display: flex;
+}
+
+
+header {
+    background: black;
+    color: #eaf1e8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    padding: 30px 20px;
+    font-size: 4vh;
+}
+
+.navbar a {
+    font-family: erasLight, sans-serif;
+    color: #eaf1e8;
+    margin: 0px 10px;
+    text-decoration: none;
+    font-size: 2.5vh;
+}
+
+.container1 {
+    display: flex;
+    flex: 1;
+}
+
+.gallery {
+    display: grid;
+    flex: 1;
+}

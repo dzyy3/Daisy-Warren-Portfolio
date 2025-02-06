@@ -1,0 +1,46 @@
+
+@font-face {
+    font-family: erasLight;
+    src: url(../fonts/ITC\ Eras\ Light\ Regular.otf) format("truetype");
+}
+@font-face {
+    font-family: erasMedium;
+    src: url(../fonts/eras-itc-medium.ttf) format("truetype");
+}
+
+button {
+    align-items: left;
+    font-family: 'erasLight', sans-serif;
+    font-size: 5vh;
+    margin: 0vh 5vh;
+    width: 27vw;
+    border-radius: 50px;
+}
+
+#VDButton {
+    background-color: #258f99;
+    border-width: 10px;
+    border-color: #eaf1e8;
+}
+
+#DTButton {
+    background-color: #eaf1e8;
+    border-width: 10px;
+    border-color: #eaf1e8;
+}
+
+#FAButton {
+    background-color: #f7984c;
+    border-width: 10px;
+    border-color: #eaf1e8;
+}
+
+main {
+    background: #eaf1e8;
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 500;
+    margin-top: 20vh;
+}

@@ -1,0 +1,28 @@
+.headshot {
+    width: 200px;
+    height: auto;
+}
+
+main{
+    color: black;
+}
+
+
+@font-face {
+    font-family: erasLight;
+    src: url(../fonts/ITC\ Eras\ Light\ Regular.otf) format("truetype");
+}
+@font-face {
+    font-family: erasMedium;
+    src: url(../fonts/eras-itc-medium.ttf) format("truetype");
+}
+
+main {
+    background: #eaf1e8;
+    color: black;
+    position: fixed;
+    top: 0;
+    width: 20%;
+    z-index: 500;
+    margin-top: 20vh;
+}
