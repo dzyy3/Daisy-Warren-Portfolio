@@ -35,7 +35,7 @@ let selectedTextIndex = -1;
 
 // Load the image.
 function preload() {
-    img = loadImage('Phone.png');
+    img = loadImage('../../js/timesICalled/Phone.png');
 }
 
 function setup() {
