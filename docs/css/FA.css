@@ -8,50 +8,6 @@
     src: url(../fonts/eras-itc-medium.ttf) format("truetype");
 }
 
-.dropbtn {
-    text-align: center;
-  }
-
-.dropdown {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-button {
-    align-items: left;
-    font-family: 'erasLight', sans-serif;
-    font-size: 5vh;
-    margin: 0vh 5vh;
-    width: 27vw;
-    border-radius: 50px;
-}
-
-#VDButton {
-    background-color: #258f99;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
-#DTButton {
-    background-color: #eaf1e8;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
-#FAButton {
-    background-color: #f7984c;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
 main {
     background: #eaf1e8;
     color: black;
@@ -67,13 +23,6 @@ li {
     padding-bottom: 1em;
     padding-top: 1em;
     display: list-item;
-}
-
-.sidenav a {
-    text-decoration: none;
-    font-family: 'erasMedium', sans-serif;
-    color: black;
-    font-size: 4vh;
 }
 
 .sidenav a:hover {

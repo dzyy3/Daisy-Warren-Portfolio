@@ -8,58 +8,82 @@
     src: url(../fonts/eras-itc-medium.ttf) format("truetype");
 }
 
-.dropbtn {
-    text-align: center;
-  }
-
-.dropdown {
-    position: absolute;
-    right: 0;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-button {
-    align-items: left;
-    font-family: 'erasLight', sans-serif;
-    font-size: 5vh;
-    margin: 0vh 5vh;
-    width: 27vw;
-    border-radius: 50px;
-}
-
-#VDButton {
-    background-color: #258f99;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
-#DTButton {
-    background-color: #eaf1e8;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
-#FAButton {
-    background-color: #f7984c;
-    border-width: 10px;
-    border-color: #eaf1e8;
-}
-
 main {
     background: #eaf1e8;
     color: black;
-    position: fixed;
-    top: 0;
-    width: 20%;
-    z-index: 500;
-    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    row-gap: 20px;
+    column-gap: 20px;    
+    margin-top: 19vh;
+    width: 100%;
+    position: relative;
+}
+
+.sidenav {
+    width: 100%;
+}
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    grid-auto-flow: dense;
+    grid-auto-rows: 250px;
+    gap: 15px;
+    padding: 20px;
+}
+
+#projectImages {
+    display: contents; /* Ensures list items follow grid layout */
+}
+
+#projectImages li {
+    list-style-type: none;
+}
+
+#projectImages img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures images fit without cropping */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+li:nth-child(1) {
+    grid-column: span 2;
+}
+li:nth-child(2) {
+    grid-column: span 2;
+}
+li:nth-child(3) {
+    grid-column: span 2;
+}
+li:nth-child(4) {
+    grid-row: span 1;
+    grid-column: span .5;
+}
+li:nth-child(5) {
+    grid-row: span 1;
+    grid-column: span .5;
+}
+li:nth-child(6) {
+    grid-row: span 1;
+    grid-column: span .5;
+}
+li:nth-child(7) {
+    grid-column: span 2;
+}
+li:nth-child(8) {
+    grid-column: span 2;
+}
+li:nth-child(9) {
+    grid-column: span 2;
+}
+li:nth-child(10) {
+    grid-column: span 2;
+}
+li:nth-child(11) {
+    grid-column: span 2;
 }
 
 li {
@@ -69,12 +93,41 @@ li {
     display: list-item;
 }
 
-.sidenav a {
-    text-decoration: none;
-    font-family: 'erasMedium', sans-serif;
-    color: black;
-    font-size: 4vh;
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-auto-rows: auto;
+    gap: 15px;
+    padding: 20px;
 }
+
+
+/* Tried to get this to work, but it didn't even get close T_T
+    .modelingImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-auto-rows: 50px;
+    grid-auto-flow: dense;
+    /* flex: 1; */
+    /* z-index: 3000; */
+
+/* .modelingImages {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 30% 30% 30%;
+    grid-gap: 15px;
+    padding: 50px;
+    margin-left: 20vh;
+    grid-auto-rows: 50px;
+    grid-auto-flow: dense;
+} */
+
+/* li:nth-child(1) {
+    grid-row: span 1.5;
+}
+li:nth-child(2) {
+    grid-row: span 1.5;
+} */
 
 .sidenav a:hover {
     color: green;
