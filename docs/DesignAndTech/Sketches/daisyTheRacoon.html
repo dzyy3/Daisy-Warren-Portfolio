@@ -16,13 +16,23 @@
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <nav class="navbar" aria-label="primary">
             <ul>
-                <a href="../../index.html">Home</a>
-                <a href="../../index.html#about">About</a>
-                <a href="../projects.html">Projects</a>
-                <a href="../resume.html">Resume</a>
+                <span>Daisy Warren</span>
+                <a href="../index.html">Home</a>
+                <a href="../WebsiteAboutMe.html">About</a>
             </ul>
+            <div class="dropdown">
+                <button id="DTButton" class="dropbtn"> Design & Tech </button>
+                <div class="dropdown-content">
+                    <a href="../VisDev/VisDev_VisDev.html">
+                        <button id="VDButton">Vis Dev</button>
+                    </a>
+                    <a href="../FineArts/FineArts.html">
+                        <button id="FAButton">Fine Art</button>
+                    </a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -39,7 +49,6 @@
     <script src="../../js/daisyTheRacoon/stages/stage0.js"></script>
     <script src="../../js/daisyTheRacoon/stages/stage1.js"></script>
     <script src="../../js/daisyTheRacoon/stages/stage2.js"></script>
-
     <script src="../../js/daisyTheRacoon/main.js"></script>
 
 
