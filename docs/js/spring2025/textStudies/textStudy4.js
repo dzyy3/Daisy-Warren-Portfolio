@@ -33,8 +33,13 @@ function draw() {
   background(110, 175, 186);
 
   for (let i = 0; i < textPoints.length; i++){
+    if (textPoints[i].x > width/2+10){
+      fill(255);
+  } else {
+      fill (219, 171, 103)
+  }
 
-    let sizeGradient = map(textPoints[i].y, 200, 100, 10, 0);
+    let sizeGradient = map(textPoints[i].y, 200, 10, 10, 1);
     ellipse(textPoints[i].x, textPoints[i].y, sizeGradient);
 }
 }

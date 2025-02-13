@@ -24,7 +24,7 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-  fill(219, 171, 103);
+  fill(255);
   noStroke();
 
   //to use sin waves :0
@@ -38,7 +38,7 @@ function draw() {
 
   for (let i = 0; i < textPoints.length; i++){
 
-    ellipse(textPoints[i].x, textPoints[i].y, 10, 10)
+    ellipse(textPoints[i].x, textPoints[i].y, 6, 6);
 
     let x = frameCount;
     let y = 30 * sin(frameCount * 0.05) + 50;

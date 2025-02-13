@@ -11,16 +11,12 @@ function preload() {
 }
 
 function setup() {
-  
-  
   //text, x pos, y pos, font size, density of dots
   textPoints = 
     myFont.textToPoints( "hello", 25, 150, fontSize, {sampleFactor: 0.1});
   
-  
   canvas = createCanvas(400, 200);
   canvas.parent('textStudy-container');
-  background(110, 175, 186);
   textSize(fontSize);
 
   fill(255);
@@ -37,7 +33,7 @@ function draw() {
     const  distance = dist(xPos, yPos, mouseX, mouseY);
     let pointSize = map(distance, 0, 100, 30, 5, true);
 
-    ellipse(textPoints[i].x, textPoints[i].y, 10);
+    ellipse(xPos, yPos, pointSize);
   }
 
 //   if mouseX and mouseY(is over ellipse) {

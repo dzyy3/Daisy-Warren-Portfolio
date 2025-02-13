@@ -41,7 +41,7 @@ function draw() {
   for (let i = 0; i < textPoints.length; i++){
 
     //determining which side of the canvas the points in textPoints are on
-    if (textPoints[i.x > width/2]){
+    if (textPoints[i].x > width/2+10){
         fill(255);
     } else {
         fill (219, 171, 103)
