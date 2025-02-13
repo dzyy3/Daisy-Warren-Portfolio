@@ -33,6 +33,8 @@ function draw() {
   background(110, 175, 186);
 
   for (let i = 0; i < textPoints.length; i++){
-    ellipse(textPoints[i].x, textPoints[i].y, 10)
+    ellipse(textPoints[i].x, textPoints[i].y, 10, 10)
+    let x = frameCount;
+    let y = 30 * sin(frameCount * 0.05) + 50;
   }
 }
