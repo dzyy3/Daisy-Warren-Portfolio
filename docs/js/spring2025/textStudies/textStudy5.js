@@ -3,6 +3,7 @@ let canvas;
 let myFont;
 let textPoints;
 let fontSize;
+let i;
 
 fontSize = 160;
 
@@ -11,6 +12,7 @@ function preload() {
 }
 
 function setup() {
+  rectMode(CENTER);
   
   canvas = createCanvas(400, 200);
   canvas.parent('textStudy-container');
@@ -24,7 +26,7 @@ function setup() {
   noStroke();
 
   //checking if the function has an odd number. % stands for modulus operator (1%2 checks if i is divisble by two or if 1 is left over)
-for(let i = 0; i > pointArray.length; i++){
+for (let i = 0; i > pointArray.length; i++){
   if(i%2 == 0){
     fill(255);
     square(pointArray[i].x, pointArray[i].y, 10);
