@@ -23,7 +23,12 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-  fill(219, 171, 103);
+//   fill(219, 171, 103);
+    if(i>=width/2){
+        fill(255);
+    } else {
+        fill (219, 171, 103)
+    }
   noStroke();
 
 }
@@ -36,3 +41,5 @@ function draw() {
     ellipse(textPoints[i].x, textPoints[i].y, 10)
   }
 }
+
+        
