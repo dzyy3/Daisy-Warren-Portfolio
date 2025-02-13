@@ -15,7 +15,7 @@ function setup() {
   
   //text, x pos, y pos, font size, density of dots
   textPoints = 
-    helloArray.textToPoints( "hello", 25, 150, fontSize, {sampleFactor: 0.1});
+    helloArray.textToPoints("hello", 25, 150, fontSize, {sampleFactor: 0.1});
   
   
   canvas = createCanvas(400, 200);
