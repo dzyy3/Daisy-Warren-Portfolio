@@ -3,7 +3,7 @@ let canvas;
 let myFont;
 let textPoints;
 let fontSize;
-let i;
+// let i;
 
 fontSize = 160;
 
@@ -26,10 +26,10 @@ function setup() {
   noStroke();
 
   //checking if the function has an odd number. % stands for modulus operator (1%2 checks if i is divisble by two or if 1 is left over)
-for (let i = 0; i > pointArray.length; i++){
+for (let i = 0; i > textPoints.length; i++){
   if(i%2 == 0){
     fill(255);
-    square(pointArray[i].x, pointArray[i].y, 10);
+    square(textPoints[i].x, textPoints[i].y, 10);
 } else{
     fill(219, 171, 103);
     ellipse(textPoints[i].x, textPoints[i].y, 10)
