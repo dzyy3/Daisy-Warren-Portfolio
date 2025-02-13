@@ -2,95 +2,45 @@ let canvas;
 
 let myFont;
 let textPoints;
+let fontSize;
+let helloArray;
 
-let fallingCircles = [];
+fontSize = 100;
 
 function preload() {
   myFont = loadFont('../../js/spring2025/textStudies/assets/comicSans.ttf');
 }
 
 function setup() {
-    
   
-  // create the array of points to reference in the future
+  
+  //text, x pos, y pos, font size
   textPoints = 
-    myFont.textToPoints(
-    "MOO", 
-    20, 
-    140, 
-    140,
+    myFont.textToPoints( "hello", 20, 140, fontSize,
     {sampleFactor: 0.2}
   );
   
   
-  canvas = createCanvas(400, 400);
+  canvas = createCanvas(400, 200);
   canvas.parent('textStudy-container');
-  background(250, 150, 0);
-  
-  fill(100, 0, 0);
+  background(110, 175, 186);
+  textFont(myFont);
+  textSize(fontSize);
+
+  fill(219, 171, 103);
   noStroke();
-  
-  
-  // function to create and store circles in an array
-  createCircles();
-  
+
+  //from xin xin's video 
+  helloArray = myFont.textToPoints("hello, width/2, height/2, fontSize");
+
 }
+
 
 function draw() {
-  
-  background(250, 150, 0);
-  
-  // update and display the circles in the fallingCircles array
-  for (let i = 0; i < fallingCircles.length; i++) {
-    
-    fallingCircles[i].update();
-    fallingCircles[i].display();
-    
-  }
-    
-}
+  background(110, 175, 186);
 
-function createCircles() {
-  
-  // for each point created by textToPoints(), create and store a new FallingCircle object
-  for (let i = 0; i < textPoints.length; i++) {
-    fallingCircles.push(
-      new FallingCircle(textPoints[i].x, textPoints[i].y)
-    );
-  }
-}
+  for (let i = 0; i < helloArray.length; i++){
 
-
-// Create a class to define what it means to be a falling circle
-class FallingCircle {
-  constructor(xPos, yPos) {
-    this.x = xPos;
-    this.y = yPos;
-    
-    this.size = 5;
-    
-    // when a circle is created, pick a random time for it to start falling
-    this.timeToFall = random(5, 10);
-    
-    // create a timer to track how much time has elapsed since the object's creation
-    this.timer = 0;
-  }
-  
-  
-  // method to be called to allow for updates in a falling circle's data
-  update() {
-    
-    // increment the timer by the amount of time elapsed
-    this.timer += deltaTime / 1000;
-    
-    // make the circle fall when enough time has passed
-    if (this.timer > this.timeToFall) {
-      this.y += deltaTime / 10;
-    }
-  }
-  
-  // method to be called to render a falling circle on screen
-  display() {
-    circle(this.x, this.y, this.size);
+    ellipse(helloArray[i].x, helloArray[i].y, 10)
   }
 }
