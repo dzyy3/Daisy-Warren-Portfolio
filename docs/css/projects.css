@@ -79,7 +79,7 @@
 .p5Container {
     height:fit-content;
     width:fit-content;
-    display: contents;
+    margin:auto;
   }
 
 #description {
