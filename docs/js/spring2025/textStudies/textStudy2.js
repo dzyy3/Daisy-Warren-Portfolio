@@ -23,7 +23,9 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-  fill(219, 171, 103);
+    let gradient = gradient = linearGradient(0, 0, width, 0, color(219, 171, 103), color(19, 21, 87));
+
+  fill(gradient);
   noStroke();
 
 }
