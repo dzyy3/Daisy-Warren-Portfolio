@@ -23,23 +23,21 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-  fill(219, 171, 103);
+  fill(255);
   noStroke();
 
 }
 
-
+//got help from in class
 function draw() {
   background(110, 175, 186);
   for (let i = 0; i < textPoints.length; i++){
-    let d = dist(mouseX, mouseY, textPoints[i].x, textPoints[i].y); // Calculate distance between mouse and point
-    //if statement for if the mouse is close enough to zoom the points
-        if (d< 15) {
-            size = 20;
-        } else {
-            size = 10;
-        }
-    ellipse(textPoints[i].x, textPoints[i].y, 10)
+    const xPos = textPoints[i].x;
+    const yPos = textPoints[i].y;
+    const  distance = dist(xPos, yPos, mouseX, mouseY);
+    let pointSize = map(distance, 0, 100, 30, 5, true);
+
+    ellipse(textPoints[i].x, textPoints[i].y, 10);
   }
 
 //   if mouseX and mouseY(is over ellipse) {
