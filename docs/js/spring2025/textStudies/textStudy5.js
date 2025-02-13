@@ -23,16 +23,18 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-  fill(219, 171, 103);
   noStroke();
 
 }
 
-
 function draw() {
   background(110, 175, 186);
-
-  for (let i = 0; i < textPoints.length; i++){
-    ellipse(textPoints[i].x, textPoints[i].y, 10)
+  //checking if the function has an odd number. % stands for modulus operator (1%2 checks if i is divisble by two or if 1 is left over)
+    if(i%2 == 1){
+        fill(255);
+        square(pointArray[i].x, pointArray[i].y, size);
+    } else{
+        fill(219, 171, 103);
+        ellipse(textPoints[i].x, textPoints[i].y, 10)
+    }
   }
-}

@@ -32,7 +32,7 @@ function draw() {
         // fill(219, 171, 103, 80)
 
         //I had to reference the internet for the code below
-        let textGradient = map(pointArray[i].x, 200, 100, 10, 0);
+        let textGradient = map(textPoints[i].x, 200, 100, 10, 0);
 
         fill(219, 171, 103, textGradient);
 

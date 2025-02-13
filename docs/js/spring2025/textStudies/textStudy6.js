@@ -27,6 +27,9 @@ function setup() {
   fill(219, 171, 103);
   noStroke();
 
+  //to use sin waves :0
+  angleMode(DEGREES);
+
 }
 
 
@@ -34,17 +37,11 @@ function draw() {
   background(110, 175, 186);
 
   for (let i = 0; i < textPoints.length; i++){
-    let d = dist(mouseX, mouseY, textPoints[i].x, textPoints[i].y); // Calculate distance between mouse and point
-    //if statement for if the mouse is close enough to zoom the points
-        if (d< 15) {
-            size = 20;
-        } else {
-            size = 10;
-        }
-    ellipse(textPoints[i].x, textPoints[i].y, 10)
-  }
 
-//   if mouseX and mouseY(is over ellipse) {
-//     increase ellipse size triple
-//   }
+    ellipse(textPoints[i].x, textPoints[i].y, 10, 10)
+
+    let x = frameCount;
+    let y = 30 * sin(frameCount * 0.05) + 50;
+    
+  }
 }

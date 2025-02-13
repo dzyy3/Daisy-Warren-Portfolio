@@ -34,7 +34,7 @@ function draw() {
 
   for (let i = 0; i < textPoints.length; i++){
 
-    let sizeGradient = map(pointArray[i].y, 200, 100, 10, 0);
+    let sizeGradient = map(textPoints[i].y, 200, 100, 10, 0);
     ellipse(textPoints[i].x, textPoints[i].y, sizeGradient);
 }
 }

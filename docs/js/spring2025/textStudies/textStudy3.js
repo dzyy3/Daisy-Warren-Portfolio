@@ -23,12 +23,13 @@ function setup() {
   background(110, 175, 186);
   textSize(fontSize);
 
-//   fill(219, 171, 103);
-    if(i>=width/2){
-        fill(255);
-    } else {
-        fill (219, 171, 103)
-    }
+// this was my inital attempt  
+// fill(219, 171, 103);
+    // if(i>=width/2){
+    //     fill(255);
+    // } else {
+    //     fill (219, 171, 103)
+    // }
   noStroke();
 
 }
@@ -38,6 +39,14 @@ function draw() {
   background(110, 175, 186);
 
   for (let i = 0; i < textPoints.length; i++){
+
+    //determining which side of the canvas the points in textPoints are on
+    if (textPoints[i.x > width/2]){
+        fill(255);
+    } else {
+        fill (219, 171, 103)
+    }
+
     ellipse(textPoints[i].x, textPoints[i].y, 10)
   }
 }
