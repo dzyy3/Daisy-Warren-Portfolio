@@ -35,13 +35,12 @@ function setup() {
 
 function draw() {
   background(110, 175, 186);
-
   for (let i = 0; i < textPoints.length; i++){
 
-    ellipse(textPoints[i].x, textPoints[i].y, 6, 6);
+    //adding sine wave to y. 
+    let yOffset = 10 * sin(frameCount * 2 + textPoints[i].x * 0.1);
 
-    let x = frameCount;
-    let y = 30 * sin(frameCount * 0.05) + 50;
-    
+
+    ellipse(textPoints[i].x, textPoints[i].y + yOffset, 6, 6);    
   }
 }
