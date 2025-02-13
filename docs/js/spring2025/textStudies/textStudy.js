@@ -1,11 +1,10 @@
 let canvas;
 
 let myFont;
-let textPoints;
-let fontSize;
 let helloArray;
+let fontSize;
 
-fontSize = 100;
+fontSize = 160;
 
 function preload() {
   myFont = loadFont('../../js/spring2025/textStudies/assets/comicSans.ttf');
@@ -14,11 +13,9 @@ function preload() {
 function setup() {
   
   
-  //text, x pos, y pos, font size
+  //text, x pos, y pos, font size, density of dots
   textPoints = 
-    myFont.textToPoints( "hello", 20, 140, fontSize,
-    {sampleFactor: 0.2}
-  );
+    helloArray.textToPoints( "hello", 25, 150, fontSize, {sampleFactor: 0.1});
   
   
   canvas = createCanvas(400, 200);
@@ -30,17 +27,14 @@ function setup() {
   fill(219, 171, 103);
   noStroke();
 
-  //from xin xin's video 
-  helloArray = myFont.textToPoints("hello, width/2, height/2, fontSize");
-
 }
 
 
 function draw() {
   background(110, 175, 186);
 
-  for (let i = 0; i < helloArray.length; i++){
+  for (let i = 0; i < textPoints.length; i++){
 
-    ellipse(helloArray[i].x, helloArray[i].y, 10)
+    ellipse(textPoints[i].x, textPoints[i].y, 10)
   }
 }
