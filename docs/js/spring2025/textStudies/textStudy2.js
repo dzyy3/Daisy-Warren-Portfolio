@@ -32,10 +32,10 @@ function draw() {
         // fill(219, 171, 103, 80)
 
         //I had to reference the internet for the code below
-        let textGradient = map(pointArray[i].x, 200, 100, 10, 0)
+        let textGradient = map(pointArray[i].x, 200, 100, 10, 0);
 
-        fill(219, 171, 103, textGradient)
+        fill(219, 171, 103, textGradient);
 
-    ellipse(textPoints[i].x, textPoints[i].y, 10)
+    ellipse(textPoints[i].x, textPoints[i].y, 10);
   }
 }
