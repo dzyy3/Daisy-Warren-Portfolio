@@ -12,29 +12,29 @@ function preload() {
 
 function setup() {
   
-  
-  //text, x pos, y pos, font size, density of dots
-  textPoints = 
-    myFont.textToPoints( "hello", 25, 150, fontSize, {sampleFactor: 0.1});
-  
-  
   canvas = createCanvas(400, 200);
   canvas.parent('textStudy-container');
   background(110, 175, 186);
   textSize(fontSize);
 
+  //text, x pos, y pos, font size, density of dots
+  textPoints = 
+    myFont.textToPoints( "hello", 25, 150, fontSize, {sampleFactor: 0.1});
+
   noStroke();
+
+  //checking if the function has an odd number. % stands for modulus operator (1%2 checks if i is divisble by two or if 1 is left over)
+  if(i%2 == 0){
+    fill(255);
+    square(pointArray[i].x, pointArray[i].y, 10);
+} else{
+    fill(219, 171, 103);
+    ellipse(textPoints[i].x, textPoints[i].y, 10)
+}
 
 }
 
 function draw() {
   background(110, 175, 186);
-  //checking if the function has an odd number. % stands for modulus operator (1%2 checks if i is divisble by two or if 1 is left over)
-    if(i%2 == 1){
-        fill(255);
-        square(pointArray[i].x, pointArray[i].y, size);
-    } else{
-        fill(219, 171, 103);
-        ellipse(textPoints[i].x, textPoints[i].y, 10)
-    }
+  
   }
