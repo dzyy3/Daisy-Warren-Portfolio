@@ -112,3 +112,10 @@ h2 {
     background-clip: text;
         color: transparent;
 }
+
+#genColorGradient {
+    background-image:
+        linear-gradient(80deg, #0e555c, #d3cab8, #f7984c);
+    background-clip: text;
+        color: transparent;
+}
