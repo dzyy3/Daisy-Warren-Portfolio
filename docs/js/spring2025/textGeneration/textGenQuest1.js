@@ -57,7 +57,7 @@ class CustomPoint{
       this.timer = 0;
       this.blinkTime = random(0.5, 1);
       
-      this.on = true
+      this.on = true;
       
     }
     

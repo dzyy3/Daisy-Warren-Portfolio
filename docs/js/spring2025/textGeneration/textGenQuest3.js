@@ -7,6 +7,9 @@ let myCustomPoints = [];
 
 fontSize = 180;
 
+//bringing x into the actual sketch
+let myX;
+
 function preload() {
   myFont = loadFont('../../js/spring2025/textGeneration/assets/70s.ttf');
 }
@@ -26,6 +29,9 @@ function setup() {
   background(0, 0, 0);
   textSize(fontSize);
 
+  //naming X myX and creating a new variable 
+  myX = new X();
+
   fill(255, 255, 255);
   noStroke();
 
@@ -42,21 +48,23 @@ function draw() {
 
     // Skip drawing the dot if the mouse is close
     if (distance < 20) {
-        continue; // Completely skip this iteration, making the dot invisible (found this on ref sheet)
+        continue;
     }
 
+    //large circle :0 
     let pointSize = map(distance, 50, 200, 5, 0, true);
     
     ellipse(xPos, yPos, pointSize);
     }
+
+    //calling the X
+    myX.update();
+    myX.display();
+
 }
 
 class CustomPoint {
     constructor(xPos, yPos) {
-      this.r = random(50,55);
-      this.g = random(50,100);
-      this.b = random(150,255);
-      
       this.a = 255;
       
       this.x = xPos;
@@ -86,9 +94,49 @@ class CustomPoint {
     
     //telling the circles to do nothing if they aren't on
     if (this.on) {
-    fill(this.r, this.g, this.b);
     circle(this.x, this.y, this.size);
     }
+  }
+
+}
+
+
+//class for x (this defines the characteristics for x)
+class X {
+
+  //you can have multiple this.x & this.y as long as they are in differnet classes
+  constructor() {
+    this.x = random(100, 500);
+    this.y = random (100, 200);
+
+    this.isVisible = false;
+  }
+
+  update() {
+
+    //this makes it visible when you are near it
+    let distance = dist(mouseX, mouseY, this.x, this.y);
+
+    if (distance <= 10) {
+      this.isVisible = true;
+    } else {
+      this.isVisible = false;
+    }
+
+  }
+//without this the x wont display when called upon
+  display() {
+
+    //! means not visible
+    if (!this.isVisible) return;
+
+    push();
+    textSize(30);
+    fill(255, 0, 0);
+    //need this to center on the mouse
+    textAlign(CENTER, CENTER);
+    text("X", this.x, this.y);
+    pop();
   }
 
 }
