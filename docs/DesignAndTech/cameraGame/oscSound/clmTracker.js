@@ -15,6 +15,7 @@ let hasInitialized = false;
 let backgroundImg;
 let button;
 let book;
+let canvas;
 const osc = new p5.Oscillator();
 let showBook = false; //book doesn't show upon loading
 
@@ -25,7 +26,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(640, 480);
+  canvas.parent("cameraGame-container");
   capture = createCapture(VIDEO, {flipped: true}, onCaptureCreated);
   capture.hide();
   tracker = new clm.tracker();
