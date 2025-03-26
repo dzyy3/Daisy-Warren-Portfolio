@@ -18,6 +18,7 @@ let book;
 let canvas;
 const osc = new p5.Oscillator();
 let showBook = false; //book doesn't show upon loading
+let p1;
 
 function preload() {
   backgroundImg = loadImage('../cameraGame/oscSound/images/background.png')
@@ -33,6 +34,9 @@ function setup() {
   tracker = new clm.tracker();
   tracker.init();
   osc.start();
+
+  //setting up the maincharacter
+  p1 = new Player("OoOO", 20, 68, 30); 
 }
 
 function onCaptureCreated() {
@@ -47,7 +51,7 @@ function keyPressed() {
   //open book when user presses x
   if (key === 'x') {
     showBook = !showBook;
-  }
+    }
 }
 
 function draw() {
@@ -75,6 +79,7 @@ function draw() {
   image(backgroundImg, 0, 0);
   pop();
 
+  p1.display();
 
   // rect(20, 120, capture.width/20, capture.width/20); //placeholder
 
@@ -88,6 +93,8 @@ function draw() {
     push();
     // book.resize(capture.width-100, capture.height-100)
     image(book, 40, 70);
+    
+    // filter(GRAY);
     pop();
   }
 }
