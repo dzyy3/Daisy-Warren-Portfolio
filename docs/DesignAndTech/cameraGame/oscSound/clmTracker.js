@@ -17,8 +17,12 @@ let button;
 let book;
 let canvas;
 const osc = new p5.Oscillator();
+const osc2 = new p5.Oscillator();
+const osc3 = new p5.Oscillator();
+const osc4 = new p5.Oscillator();
 let showBook = false; //book doesn't show upon loading
 let p1;
+let bgx = 0;
 
 function preload() {
   backgroundImg = loadImage('../cameraGame/oscSound/images/background.png')
@@ -34,9 +38,13 @@ function setup() {
   tracker = new clm.tracker();
   tracker.init();
   osc.start();
+  osc2.start();
+  osc3.start();
+  osc4.start();
 
-  //setting up the maincharacter
+  //setting up the player
   p1 = new Player("OoOO", 20, 68, 30); 
+
 }
 
 function onCaptureCreated() {
@@ -63,6 +71,10 @@ function draw() {
   image(capture, 0, 0);
   
   osc.freq(0);
+  osc2.freq(0);
+  osc3.freq(0);
+  osc4.freq(0);
+
 
   if (!positions) return;
   playSound();
@@ -75,8 +87,9 @@ function draw() {
 
   //displaying the background image
   push();
-  backgroundImg.resize(capture.width, 100);
-  image(backgroundImg, 0, 0);
+  backgroundImg.resize(capture.width * 2, 100);
+  image(backgroundImg, bgx, 0);
+  image(backgroundImg, bgx + backgroundImg.width, 0); // Draw a second instance for looping
   pop();
 
   p1.display();
@@ -117,7 +130,42 @@ const distance = dist(topxPos, topyPos, botxPos, botyPos);
 const mappedSize = map(distance, 0, 16, 5, 40);
 
 if (distance > 10) {
-  osc.freq(random(200,500))
+  osc.freq(random(200,500));
+  p1.x += 1;
+  console.log(p1.x);
+  bgx -= 1; // Move background left
+
+  // console.log(p1.x); to test how far the player must go
+
+  if (p1.x > 660) {
+    p1.x = 68;
+    bgx = 0;
+  }
+
+  if (p1.x > 180 && p1.x < 260) {
+    osc2.freq(random(600,800));
+
+    push();
+    fill(74, 255, 54);
+    stroke(0);
+    strokeWeight(3);
+    textSize(20);
+    text('⏙⍲⍑⍧ℍ ⟟⍑ ⌦⌰⟄⟄⍦', 80, 140);
+    pop();
+    // osc3.freq(random(800,900));
+  }
+
+  if (p1.x > 500 && p1.x < 560) {
+    osc3.freq(random(100,900));
+
+    push();
+    fill(239, 190, 255);
+    stroke(0);
+    strokeWeight(3);
+    textSize(20);
+    text('⍧⍦⍲ ⎾𝟠☈', 400, 140);
+    pop();
+  }
   } 
 }
 
