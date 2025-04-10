@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/projects.css">
+</head>
+<header>
+    <nav class="navbar" aria-label="primary">
+        <ul>
+            <span>Daisy Warren</span>
+            <a href="../../../index.html">Home</a>
+            <a href="../../../WebsiteAboutMe.html">About</a>
+        </ul>
+        <div class="dropdown">
+            <button id="DTButton" class="dropbtn"> Design & Tech </button>
+            <div class="dropdown-content">
+                <a href="../../../VisDev/VisDev_VisDev.html">
+                    <button id="VDButton">Vis Dev</button>
+                </a>
+                <a href="../../../FineArts/FineArts.html">
+                    <button id="FAButton">Fine Art</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+<body>
+
+    <div id="projectWindow">
+        <h1>Community Quiz</h1>
+        <title>Community Quiz</title>
+        <div id="Community-Quiz-Container" class="p5Container">
+            <div>
+                <p>When was the last time you drew for fun?</p>
+                <p id="small-text">more than a year ago -> less than a day ago</p>
+                <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                <p>Do you wish you could draw more often?</p>
+                <button id="my-input" id="Q4Yes">Yes</button>
+                <button id="my-input" id="Q4No">No</button>
+                <p>Do you enjoy drawing from life and/or in public?</p>
+                <button id="my-input" id="Q5Yes">Yes</button>
+                <button id="my-input" id="Q5Yes">Only with friends</button>
+                <button id="my-input" id="Q5Yes">Only if no one is watching</button>
+                <button id="my-input" id="Q5No">No</button>
+            </div>
+
+        </div>
+        <div id="description">
+            <p>This is a tool for members of the Plein Air Club, an art club I run at The New School, to find their love for drawing and figure out what materials they should use during club meetings!</p>
+        </div>
+
+        <a href="communityQuizBag.html"><button>Next</button>
+    </div>
+
+    <script src="../../../js/communityQuiz/communityQuiz.js"></script>
+
+</body>
+</html>

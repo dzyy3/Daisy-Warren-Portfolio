@@ -94,3 +94,44 @@ header {
     border-width: 10px;
     border-color: #eaf1e8;
 }
+
+
+/*Community Quiz CS*/
+#my-input {
+    font-size: 20px;
+    border-radius: 0px;
+    background-color: rgb(132, 179, 125);
+    color: rgb(38, 77, 32);
+    border-color: rgb(38, 77, 32);
+    margin: 0;
+    margin-top: 5px;
+}
+
+#my-input:hover { 
+    background-color: rgb(38, 77, 32);
+    color: rgb(132, 179, 125);
+}
+
+#Community-Quiz-Container {
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+}
+
+#small-text {
+    font-size: 13px;
+    color: rgb(38, 77, 32);
+}
+
+.resize img {
+    height: 150px;
+    width: auto;
+    margin: 0;
+    padding: 15px;
+    padding: 0;
+}
+
+.resize img:hover {
+    height: 160px;
+    width: auto;
+}
