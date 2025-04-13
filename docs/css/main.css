@@ -142,3 +142,30 @@ header {
     height: 160px;
     width: auto;
 }
+
+/* Slider Styling for Community Quiz */
+input[type="range"] {
+    -webkit-appearance: none; /* hide default web look*/
+    width: 60%;
+    height: 20px;
+    outline: 2px solid rgb(38, 77, 32);
+    border-radius: 20px;
+    background-color: rgb(132, 179, 125);
+    fill:rgb(38, 77, 32);
+}
+
+/* to change the dot on the sliders color */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: rgb(38, 77, 32); /* ← the dot color */
+    cursor: pointer;
+}
+
+#drawing-slider:hover {
+    background: rgb(177, 206, 172);
+    outline: 2px solid rgb(74, 109, 69);
+    transform: scale(1.02);
+}
