@@ -97,7 +97,7 @@ header {
 
 
 /*Community Quiz CS*/
-#my-input {
+.my-input {
     font-size: 20px;
     border-radius: 0px;
     background-color: rgb(132, 179, 125);
@@ -107,7 +107,12 @@ header {
     margin-top: 5px;
 }
 
-#my-input:hover { 
+.my-input:hover { 
+    background-color: rgb(38, 77, 32);
+    color: rgb(132, 179, 125);
+}
+
+.selected {
     background-color: rgb(38, 77, 32);
     color: rgb(132, 179, 125);
 }
@@ -123,12 +128,14 @@ header {
     color: rgb(38, 77, 32);
 }
 
+.resize {
+    margin: 20px;
+}
+
 .resize img {
     height: 150px;
     width: auto;
     margin: 0;
-    padding: 15px;
-    padding: 0;
 }
 
 .resize img:hover {
