@@ -34,6 +34,11 @@ function readAndStoreSliderValues() {
     //store slider value in local storage
     const drawingSlider = document.getElementById("drawing-slider");
 
-    //populate local storage with slider values
-    localStorage.setItem("lastDrawing", drawingSliderSlider.value);
+    // Set initial value in localStorage (meduium 1.5)
+    localStorage.setItem("lastDrawing", drawingSlider.value);
+
+    // Listen for slider input changes and update localStorage as the slider is changed after intial value was set
+    drawingSlider.addEventListener("input", () => {
+        localStorage.setItem("lastDrawing", drawingSlider.value);
+    });
 }

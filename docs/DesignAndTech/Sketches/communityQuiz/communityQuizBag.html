@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
-
     <link rel="stylesheet" href="../../../css/main.css">
     <link rel="stylesheet" href="../../../css/projects.css">
 </head>
@@ -35,10 +33,14 @@
         <h1>Community Quiz</h1>
         <title>Community Quiz</title>
         <div class="resize" id="Community-Quiz-Container" class="p5Container">
-            <img src="../../../js/communityQuiz/images/backpack.png" alt="black backpack icon">
-            <img src="../../../js/communityQuiz/images/totebag.png" alt="white totebag with cute animals">
-            <img src="../../../js/communityQuiz/images/bag3.png" alt="ziplock baggy">
+
             <p id="bag-text">pick a bag...</p>
+
+            <div id="Q6"> 
+                <input type="image" src="../../../js/communityQuiz/images/backpack.png" name="black backpack icon" class="my-input" id="Q6Backpack" />
+                <input type="image" src="../../../js/communityQuiz/images/totebag.png" name="white totebag with cute animals" class="my-input" id="Q6Totebag" />
+                <input type="image" src="../../../js/communityQuiz/images/bag3.png" name="ziplock baggy"  class="my-input" id="Q6Ziplock" />
+            </div>
         </div>
         <div id="description">
             <p>This is a tool for members of the Plein Air Club, an art club I run at The New School, to find their love for drawing and figure out what materials they should use during club meetings!</p>
@@ -47,7 +49,7 @@
         <a href="communityQuizItems.html"><button>Next</button>
     </div>
 
-    <script src="../../../js/communityQuiz/communityQuiz.js"></script>
+    <script src="../../../js/communityQuiz/bag.js"></script>
 
 </body>
 </html>

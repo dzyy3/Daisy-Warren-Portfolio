@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const questions = ["Q1", "Q2", "Q3"];
+    const questions = ["Q6"];
 
     questions.forEach(q => {
         const container = document.getElementById(q);
@@ -17,12 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
             button.addEventListener("click", () => {
                 // Save to localStorage
                 localStorage.setItem(q, answerId);
-
-                // Remove highlight from all buttons in this question
-                buttons.forEach(btn => btn.classList.remove("selected"));
-
-                // Add highlight to clicked one
-                button.classList.add("selected");
             });
         });
     });
