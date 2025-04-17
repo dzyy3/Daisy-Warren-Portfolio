@@ -169,3 +169,35 @@ input[type="range"]::-webkit-slider-thumb {
     outline: 2px solid rgb(74, 109, 69);
     transform: scale(1.02);
 }
+
+#Q6 {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  
+  #Q6 .my-input {
+    flex: 1;
+    max-width: 33%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  #projectWindow.quiz-bg {
+    background-image: url('../js/communityQuiz/images/grass.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    margin-right: 15%;
+    margin-left: 15%;
+    text-align: center;
+    z-index: -2;
+  }
+
+  #Community-Quiz-Container p {
+    background-color: rgba(234, 241, 232, 0.6);
+    padding: 5px;
+  }
