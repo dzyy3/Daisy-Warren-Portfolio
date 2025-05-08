@@ -38,9 +38,27 @@
 
     <div id="projectWindow">
         <h1>Dog Museum U・ᴥ・U</h1>
-        <div class="p5Container"></div>
+        
+        
         <div id="description">
             <p>What kind of art would your dog like? A great place for you to see what you can hang up at a viewing height for your dog based on your pup's preferences!</p>
+        </div>
+
+        <section>
+            <form id="dogInfoForm">
+            <label for="breed">Dog Breed:</label>
+            <input type="text" id="breed" name="breed" required>
+            <br>
+            <label for="color">Dog Color:</label>
+            <input type="text" id="color" name="color" required>
+            <br>
+            <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <div>
+            <h2 id="artTitle"></h2>
+            <img id="imageContainer" alt="Dog Art" height="500px">
         </div>
     </div>
 

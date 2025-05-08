@@ -1,42 +1,57 @@
-const artListURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/all";
+function fetchFromInput() {
+    const breed = document.getElementById("breed").value;
+    const country = document.getElementById("country").value;
 
-function getURLFromBreed(breed) {
-    return(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectNumber}`);
-}
-
-fetch("https://dog.ceo/api/breeds/list/all")
+    // search for all images that match the queries
+    fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isHighlight=true&q=" + breed) 
     .then(response => response.json())
-    .then(handleBreedListFetch)
-    .catch(error => console.log(error));
-
-
-
-function handleBreedListFetch(data) {
-    // pick random breed from the list
-    const breedList = Object.keys(data.message); // object helper method that transforms an object's keys into an array
-    const randomBreed = breedList[Math.floor(Math.random() * breedList.length)];
-    
-    console.log(randomBreed);
-
-    fetch(getURLFromBreed(randomBreed))
-        .then(response => response.json())
-        .then(handleImagesFetch)
-        .catch(error => console.log(error));
+    .then(data => {
+        // only proceed if the response contains objectIDs
+        if (data.objectIDs && data.objectIDs.length > 0) {
+            handleArtListFetch(data);
+        } else {
+            console.error("No objects found for the query."); 
+        }
+    })
+    .catch(error => console.error(error));
 }
 
 
+// event listener for the form submission
+document.getElementById("dogInfoForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    fetchFromInput();
+});
+
+
+function handleArtListFetch(data) {
+    const artList = data.objectIDs; // converts the objectIDs into an array (easier to work with)
+
+    function fetchRandomArt() {
+        let randObjectID = artList[Math.floor(Math.random() * artList.length)];
+        
+        // search using object ID (randomArt) to get the image (plus other info)
+        fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/" + randObjectID)
+            .then(response => response.json())
+            .then(data => {
+                if (data.primaryImageSmall === "") {
+                    // if no image, fetch another random art
+                    console.error("No image found for this object. Fetching another one...");
+                    fetchRandomArt();
+                } else {
+                    handleImagesFetch(data);
+                }
+            })
+            .catch(error => console.log(error));
+    }
+
+    fetchRandomArt(); // initial fetch
+}
+
+
+// assign the selected art piece's data to HTML elements
 function handleImagesFetch(imagedata) {
     console.log(imagedata);
-    let imagePathList = imagedata.message;
-
-    const imageCount = 6;
-    for (let i = 0; i < imageCount; i++) {
-        let randomIDx = Math.floor(Math.random() * imagePathList.length);
-        let randomPath = imagePathList[randomIDx];
-        console.log(randomPath);
-
-        let imgElement = document.createElement("img");
-        imgElement.src = randomPath;
-        document.body.appendChild(imgElement);
-    }
+    document.getElementById("artTitle").innerHTML = imagedata.title;
+    document.getElementById("imageContainer").src = imagedata.primaryImageSmall;
 }
