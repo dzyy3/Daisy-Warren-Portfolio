@@ -119,3 +119,12 @@ h2 {
     background-clip: text;
         color: transparent;
 }
+
+
+#dogInfoForm label {
+    color: black;
+}
+
+#imageContainer {
+    display: none;
+}

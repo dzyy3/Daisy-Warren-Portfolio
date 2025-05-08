@@ -1,8 +1,8 @@
 function fetchFromInput() {
     const breed = document.getElementById("breed").value;
-    const country = document.getElementById("country").value;
+    const color = document.getElementById("color").value;
 
-    // search for all images that match the queries
+    // search for all images that match
     fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&isHighlight=true&q=" + breed) 
     .then(response => response.json())
     .then(data => {
@@ -10,12 +10,12 @@ function fetchFromInput() {
         if (data.objectIDs && data.objectIDs.length > 0) {
             handleArtListFetch(data);
         } else {
-            console.error("No objects found for the query."); 
+            console.error("No objects found for the query.");
+            document.getElementById("artTitle").innerHTML="your dog hates art :( ... do better at parenting";
         }
     })
     .catch(error => console.error(error));
 }
-
 
 // event listener for the form submission
 document.getElementById("dogInfoForm").addEventListener("submit", function(event) {
@@ -54,4 +54,5 @@ function handleImagesFetch(imagedata) {
     console.log(imagedata);
     document.getElementById("artTitle").innerHTML = imagedata.title;
     document.getElementById("imageContainer").src = imagedata.primaryImageSmall;
+    document.getElementById("imageContainer").style.display = "block";
 }
